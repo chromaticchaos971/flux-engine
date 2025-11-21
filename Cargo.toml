@@ -1,0 +1,19 @@
+[package]
+name = "flux_engine"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# The Core EVM (Fastest in the world)
+revm = { version = "3.5", features = ["std", "optional_no_base_fee", "optional_block_gas_limit"] }
+revm-primitives = "2.0"
+
+# Parallelism
+rayon = "1.8"
+parking_lot = "0.12" # Faster Mutexes than std
+dashmap = "5.5"      # Concurrent Hashmap for State
+
+# Types
+alloy-primitives = "0.4"
+hex = "0.4"
+thiserror = "1.0"
